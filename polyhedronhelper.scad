@@ -6,7 +6,7 @@ zmin = 1; // dont set lower than ~0.01  (e.g., make greater than 0 to prevent de
 zmax = 2;
 center=false;
 
-polyhedron_from_surface(image_data, xsize, ysize, zmin, zmax,center);
+//polyhedron_from_surface(image_data, xsize, ysize, zmin, zmax,center);
 
 module polyhedron_from_surface(surface_data, xsize=100,ysize=100,zmin=1,zmax=2,center=false){
 
