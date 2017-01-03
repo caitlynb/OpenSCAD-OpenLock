@@ -1,0 +1,2 @@
+# This directory gets a lot of slicing gcode, so ignore it
+*.gcode
