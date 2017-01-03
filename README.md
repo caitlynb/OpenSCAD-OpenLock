@@ -5,14 +5,14 @@
 If you simply want to copy the STL files, simply look in the STLs folder!
 
 ## Naming Convention for STL files:
-OSOL-A-Imperial-8.0-Cobble-var2.stl = 
-OSOL: OpenSCAD OpenLock file
-A: The OpenLock tile format
-Imperial: 
+OSOL-A-Imperial-8.0-Cobble-var2.stl =  
+OSOL: OpenSCAD OpenLock file  
+A: The OpenLock tile format  
+Imperial:  
 * Imperial = 1" scale
 * Metric = 25mm scale
-8.0: Height (in millimeters) to the top of the tile
-Cobble: 
+8.0: Height (in millimeters) to the top of the tile  
+Cobble:  
 * None = No texture
 * Cobble = Cobblestone like texture
 * Slate = Rock / Slate / Cave like texture
