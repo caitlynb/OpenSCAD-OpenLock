@@ -1,2 +1,5 @@
 # This directory gets a lot of slicing gcode, so ignore it
 *.gcode
+
+# ignore the Jetbrains directory
+.idea/

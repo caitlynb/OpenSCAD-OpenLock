@@ -22,6 +22,7 @@ There are a few included errata items:
 * Cobble.scad:  The heightmap of the cobble pattern
 * Slate.scad:  The heightmap of the slate pattern
 * Grass.scad:  The heightmap of the grass pattern
-* PolyhedronHelper.scad:  The functions that take a heightmap and generate a polyhedron.  (Similar to OpenSCAD's surface(), however, since it uses a heightmap we can use it in Thingiverse's Customizer app
-* utility.scad:  Some other helper stuff
+* polyhedron.scad:  The functions that take a heightmap and generate a polyhedron.  (Similar to OpenSCAD's surface(), however, since it uses a heightmap we can use it in Thingiverse's Customizer app
+* hardware.scad:  Some other helper stuff
+* DemoSurface.scad:  Used by the polyhedron.scad file to show the smiley face
 
