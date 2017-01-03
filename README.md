@@ -17,9 +17,11 @@ If you simply want to copy the STL files, simply look in the STLs folder!
  * Cobble = Cobblestone like texture
  * Slate = Rock / Slate / Cave like texture
  * Grass = Outdoors / Grass / Dirt like texture
-* var2: Which random variant is this file (somefiles only have var0)
+* *var2*: Which random variant is this file (somefiles only have var0)
 
 ## For Makers and Hackers:
+
+These files are licensed CC-BY-NC (https://creativecommons.org/licenses/by-nc/4.0/)
 
 `OSOL = OpenSCAD OpenLock`
 
