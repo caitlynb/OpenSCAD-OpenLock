@@ -631,6 +631,7 @@ cutoutwide2 = 12;
 cutoutwide3 = 10;
 cutoutdeep3 = 5;
 pillar_w = 1.5;
+pillar_d = 2;
 
 module clipcut(){
     difference() {
@@ -642,8 +643,8 @@ module clipcut(){
                 [-cutoutwide3/2,cutoutdeep3+2],[cutoutwide3/2,cutoutdeep3+2],
                 [cutoutwide3/2,cutoutdeep3],[cutoutwide2/2,cutoutdeep2],
                 [cutoutwide1/2,cutoutdeep1],[cutoutwide1/2,-2],
-                [-pillar_w/2,-2],[-pillar_w/2,cutoutdeep3+2],[pillar_w/2,cutoutdeep3+2],[pillar_w/2,-2]],
-                (Supports == "Pillar") ? [[0,1,2,3,4,11,10],[13,12,5,6,7,8,9]] : [[0,1,2,3,4,5,6,7,8,9]]
+                [-pillar_w/2,cutoutdeep3+2],[-pillar_w/2,pillar_d],[pillar_w/2,pillar_d],[pillar_w/2,cutoutdeep3+2]],
+                (Supports == "Pillar") ? [[0,1,2,3,4,10,11,12,13,5,6,7,8,9]] : [[0,1,2,3,4,5,6,7,8,9]]
             );
         
         if (Supports == "Yes") {
