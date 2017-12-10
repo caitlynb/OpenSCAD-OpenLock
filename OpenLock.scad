@@ -5,20 +5,20 @@ include <hardware.scad>
 include <polyhedronhelper.scad>
 
 // Changes the Part that you will create
-part = "v"; /* [
-a:Part A,
-b:Part B,
-c:Part C,
-d:Part D,
-e:Part E,
-r:Part R,
-s:Part S,
-u:Part U,
-f:Part F,
-v:Part V,
-sa:Part SA,
-sb:Part SB,
-g:Part G
+part = "v"; 
+/* [a:Part A, 2x0.5 edge (1 clip)
+    b:Part B, 2x0.5 edge (2 clips)
+    c:Part C, 2.5x0.5 edge (2 clips)
+    d:Part D, 3x0.5 edge (3 clips)
+    e:Part E, 2x2
+    r:Part R, 4x2
+    s:Part S, 1x2
+    u:Part U, 4x4
+    f:Part F, 2x2 corner, w/clip
+    v:Part V, 4x4 corner, 3 clips
+    sa:Part SA, 1x3
+    sb:Part SB, 1x4
+    g:Part G, 2x2 1/4 circle edge, fits "f"
 ] */
 
 // Do you want an array?
