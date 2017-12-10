@@ -5,7 +5,21 @@ include <hardware.scad>
 include <polyhedronhelper.scad>
 
 // Changes the Part that you will create
-part = "g"; // [a:Part A,b:Part B, c:Part C,d:Part D,e:Part E,r:Part R,s:Part S,u:Part U,f:Part F,v:Part V,sa:Part SA,sb:Part SB,g:Part G]
+part = "v"; /* [
+a:Part A,
+b:Part B,
+c:Part C,
+d:Part D,
+e:Part E,
+r:Part R,
+s:Part S,
+u:Part U,
+f:Part F,
+v:Part V,
+sa:Part SA,
+sb:Part SB,
+g:Part G
+] */
 
 // Do you want an array?
 array = "None"; // [None:No Array,Small:Array for a ~4.5"x4.5" printer,FF:Array for a Makerbot/Flashforge style printer,i3:Array for a i3 style printer]
@@ -44,92 +58,23 @@ buffer=2;
 print_part();
 //floors();
 
+function unit() = (Units == "Imperial") ? 25.4 : 25;
+
 module print_part(){
-    if (part == "e"){
-        if (Units == "Imperial"){
-            part_e(25.4);
-        } else {
-            part_e(25);
-        }
-    } else if (part == "a"){
-        if (Units == "Imperial"){
-            part_a(25.4);
-        } else {
-            part_a(25);
-        }
-    } else if (part == "b"){
-        if (Units == "Imperial"){
-            part_b(25.4);
-        } else {
-            part_b(25);
-        }
-    } else if (part == "c"){
-        if (Units == "Imperial"){
-            part_c(25.4);
-        } else {
-            part_c(25);
-        }
-    } else if (part == "d"){
-        if (Units == "Imperial"){
-            part_d(25.4);
-        } else {
-            part_d(25);
-        }
-    } else if (part == "f"){
-        if (Units == "Imperial"){
-            part_f(25.4);
-        } else {
-            part_f(25);
-        }
-    } else if (part == "g"){
-        if (Units == "Imperial"){
-            part_g(25.4);
-        } else {
-            part_g(25);
-        }
-    } else if (part == "u"){
-        if (Units == "Imperial"){
-            part_u(25.4);
-        } else {
-            part_u(25);
-        }     
-    } else if (part == "r"){
-        if (Units == "Imperial"){
-            part_r(25.4);
-        } else {
-            part_r(25);
-        }
-     } else if (part == "s"){
-        if (Units == "Imperial"){
-            part_s(25.4);
-        } else {
-            part_s(25);
-        }     
-    } else if (part == "sa"){
-        if (Units == "Imperial"){
-            part_sa(25.4);
-        } else {
-            part_sa(25);
-        }   
-    } else if (part == "sb"){
-        if (Units == "Imperial"){
-            part_sb(25.4);
-        } else {
-            part_sb(25);
-        }  
-    } else if (part == "v"){
-        if (Units == "Imperial"){
-            part_v(25.4);
-        } else {
-            part_v(25);
-        }   
-    }else {
-        if (Units == "Imperial"){
-            part_e(25.4);
-        } else {
-            part_e(25);
-        }
-    }
+    if (part == "e")            part_e(unit());
+    else if (part == "a")       part_a(unit());
+    else if (part == "b")       part_b(unit());
+    else if (part == "c")       part_c(unit());
+    else if (part == "d")       part_d(unit());
+    else if (part == "f")       part_f(unit());
+    else if (part == "g")       part_g(unit());
+    else if (part == "u")       part_u(unit());
+    else if (part == "r")       part_r(unit());
+    else if (part == "s")       part_s(unit());
+    else if (part == "sa")      part_sa(unit());
+    else if (part == "sb")      part_sb(unit());
+    else if (part == "v")       part_v(unit());
+    else                        part_e(unit());
 }
 
 module part_d(unitwidth=25.4){
