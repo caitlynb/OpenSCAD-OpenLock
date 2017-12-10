@@ -5,7 +5,7 @@ include <hardware.scad>
 include <polyhedronhelper.scad>
 
 // Changes the Part that you will create
-part = "r"; 
+part = "f"; 
 /* [a:Part A, 2x0.5 edge (1 clip)
     b:Part B, 2x0.5 edge (2 clips)
     c:Part C, 2.5x0.5 edge (2 clips)
@@ -31,7 +31,7 @@ layerheight = 0.2; // [0.05:0.025:0.25]
 Units = "Imperial";  // [Imperial,Metric]
 
 // Do you want to include the built in supports in the model?
-Supports = "Yes";   // [Yes,No]
+Supports = "Pillar";   // [Yes,No,Pillar]
 
 // Do you want to generate some texture on the part?
 Texture = "None"; // [None,Cobble,Slate,Grass]
@@ -787,6 +787,7 @@ cutoutdeep2 = 2;
 cutoutwide2 = 12;
 cutoutwide3 = 10;
 cutoutdeep3 = 5;
+pillar_w = 1.5;
 
 module clipcut(){
     difference() {
@@ -797,7 +798,10 @@ module clipcut(){
                 [-cutoutwide2/2, cutoutdeep2],[-cutoutwide3/2,cutoutdeep3],
                 [-cutoutwide3/2,cutoutdeep3+2],[cutoutwide3/2,cutoutdeep3+2],
                 [cutoutwide3/2,cutoutdeep3],[cutoutwide2/2,cutoutdeep2],
-                [cutoutwide1/2,cutoutdeep1],[cutoutwide1/2,-2]]);
+                [cutoutwide1/2,cutoutdeep1],[cutoutwide1/2,-2],
+                [-pillar_w/2,-2],[-pillar_w/2,cutoutdeep3+2],[pillar_w/2,cutoutdeep3+2],[pillar_w/2,-2]],
+                (Supports == "Pillar") ? [[0,1,2,3,4,11,10],[13,12,5,6,7,8,9]] : [[0,1,2,3,4,5,6,7,8,9]]
+            );
         
         if (Supports == "Yes") {
             translate([-(cutoutdeep3+1)/2,0,cutoutstartz+layerheight+(cutoutheight-layerheight*2)/2])
