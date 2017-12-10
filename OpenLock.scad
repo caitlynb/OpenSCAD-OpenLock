@@ -5,7 +5,7 @@ include <hardware.scad>
 include <polyhedronhelper.scad>
 
 // Changes the Part that you will create
-part = "v"; 
+part = "r"; 
 /* [a:Part A, 2x0.5 edge (1 clip)
     b:Part B, 2x0.5 edge (2 clips)
     c:Part C, 2.5x0.5 edge (2 clips)
@@ -87,12 +87,6 @@ module part_d(unitwidth=25.4){
                     clipcut();
                 }
             }
-            if (Supports == "Yes"){
-                for (y = [-1:1]){
-                    translate([unitwidth/4,y*unitwidth,0])
-                    clipsupport();
-                }
-            }
         }
         if (TileMarkers == "Yes"){
             for (x = [-.25:0.5:.25]){
@@ -134,12 +128,6 @@ module part_c(unitwidth=25.4){
                 for (y = [-.25,.75]){
                     translate([unitwidth/4,y*unitwidth,0])
                     clipcut();
-                }
-            }
-            if (Supports == "Yes"){
-                for (y = [-.25,.75]){
-                    translate([unitwidth/4,y*unitwidth,0])
-                    clipsupport();
                 }
             }
         }
@@ -185,12 +173,6 @@ module part_a(unitwidth=25.4){
                     clipcut();
                 }
             }
-            if (Supports == "Yes"){
-                for (y = [0]){
-                    translate([unitwidth/4,y*unitwidth,0])
-                    clipsupport();
-                }
-            }
         }
         if (TileMarkers == "Yes"){
             for (x = [-.25,0.25]){
@@ -232,12 +214,6 @@ module part_b(unitwidth=25.4){
                 for (y = [-.5,.5]){
                     translate([unitwidth/4,y*unitwidth,0])
                     clipcut();
-                }
-            }
-            if (Supports == "Yes"){
-                for (y = [-0.5,0.5]){
-                    translate([unitwidth/4,y*unitwidth,0])
-                    clipsupport();
                 }
             }
         }
@@ -283,15 +259,6 @@ module part_e(unitwidth=25.4){
                     translate([0,unitwidth,0])
                     rotate([0,0,90])
                     clipcut();
-                }
-            }
-
-            if (Supports == "Yes"){
-                for (r = [0:90:360]){
-                    rotate([0,0,r])
-                    translate([0,unitwidth,0])
-                    rotate([0,0,90])
-                    clipsupport();
                 }
             }
         }
@@ -346,19 +313,6 @@ module part_f(unitwidth=25.4){
                 rotate(45)
                 translate([unitwidth*2,0,0])
                 clipcut();
-            }
-
-            if (Supports == "Yes"){
-                for (r = [90,180]){
-                    rotate([0,0,r])
-                    translate([0,unitwidth,0])
-                    rotate([0,0,90])
-                    clipsupport();
-                }
-                translate([-unitwidth,-unitwidth,0])
-                rotate(45)
-                translate([unitwidth*2,0,0])
-                clipsupport();
             }
         }
         if (TileMarkers == "Yes"){
@@ -444,14 +398,6 @@ module part_g(unitwidth=25.4){
             }
         }
     }
-    if (Supports == "Yes"){
-        for (r=[22.5,45,67.5]){
-            rotate(r)
-            translate([unitwidth*2,0,0])
-            rotate(180)
-            clipsupport();
-        }
-    }
 }
 
 module part_r(unitwidth=25.4){
@@ -471,22 +417,7 @@ module part_r(unitwidth=25.4){
                         clipcut();
                     }
                 }
-            }
-
-            if (Supports == "Yes"){
-                for (r = [0,180]){
-                    rotate([0,0,r]){
-                        for (x = [-1:1:1]){
-                            translate([x*unitwidth,unitwidth,0])
-                            rotate([0,0,90])
-                            clipsupport();
-                        }
-                        translate([unitwidth*2, 0, 0])
-                        clipsupport();
-                    }
-                }
-            }
-            
+            }            
         }
         if (TileMarkers == "Yes"){
             for (x = [-2:1:2]){
@@ -534,20 +465,6 @@ module part_s(unitwidth=25.4){
                         }
                         translate([unitwidth/2, 0, 0])
                         clipcut();
-                    }
-                }
-            }
-
-            if (Supports == "Yes"){
-                for (r = [0,180]){
-                    rotate([0,0,r]){
-                        for (x = [0]){
-                            translate([x*unitwidth,unitwidth,0])
-                            rotate([0,0,90])
-                            clipsupport();
-                        }
-                        translate([unitwidth/2, 0, 0])
-                        clipsupport();
                     }
                 }
             }
@@ -603,21 +520,6 @@ module part_sa(unitwidth=25.4){
                     }
                 }
             }
-
-            if (Supports == "Yes"){
-                for (r = [0,180]){
-                    rotate([0,0,r]){
-                        for (y = [-0.5,0.5]){
-                            translate([unitwidth/2,y*unitwidth,0])
-//                            rotate([0,0,90])
-                            clipsupport();
-                        }
-                        translate([0,unitwidth*1.5,0])
-                        rotate([0,0,90])
-                        clipsupport();
-                    }
-                }
-            }
         }
         if (TileMarkers == "Yes"){
             for (x = [-0.5:1:0.5]){
@@ -667,21 +569,6 @@ module part_sb(unitwidth=25.4){
                         rotate([0,0,90])
                         clipcut();
                         
-                    }
-                }
-            }
-
-            if (Supports == "Yes"){
-                for (r = [0,180]){
-                    rotate([0,0,r]){
-                        for (y = [-1,0,1]){
-                            translate([unitwidth/2,y*unitwidth,0])
-//                            rotate([0,0,90])
-                            clipsupport();
-                        }
-                        translate([0,unitwidth*2,0])
-                        rotate([0,0,90])
-                        clipsupport();
                     }
                 }
             }
@@ -743,22 +630,6 @@ module part_v(unitwidth=25.4){
                 }
                 
             }
-            if (Supports == "Yes"){
-                for (r = [90,180]){
-                    for (i = [-1:1:1]){
-                        rotate([0,0,r])
-                        translate([i*unitwidth,unitwidth*2,0])
-                        rotate([0,0,90])
-                        clipsupport();
-                    }
-                }
-                translate([-unitwidth*2,-unitwidth*2,0])
-                for (r=[22.5,45,67.5]){
-                    rotate(r)
-                    translate([unitwidth*4,0,0])
-                    clipsupport();
-                }
-            }
         }
         if (TileMarkers == "Yes"){
             for (x = [-2:1:2]){
@@ -814,16 +685,6 @@ module part_u(unitwidth=25.4){
                     }
                 }
                 
-            }
-            if (Supports == "Yes"){
-                for (r = [0:90:360]){
-                    for (i = [-1:1:1]){
-                        rotate([0,0,r])
-                        translate([i*unitwidth,unitwidth*2,0])
-                        rotate([0,0,90])
-                        clipsupport();
-                    }
-                }
             }
         }
         if (TileMarkers == "Yes"){
@@ -927,25 +788,26 @@ cutoutwide2 = 12;
 cutoutwide3 = 10;
 cutoutdeep3 = 5;
 
-module clipsupport(){
-    translate([-(cutoutdeep3+1)/2,0,cutoutstartz+layerheight+(cutoutheight-layerheight*2)/2])
-    difference(){
-        cube([cutoutdeep3+1, 6, cutoutheight-layerheight*2],center=true);
-        cube([cutoutdeep3-1, 4, cutoutheight+layerheight*2],center=true);
-    }
-        
-}
-
 module clipcut(){
-    translate([0,0,cutoutheight/2+cutoutstartz])
-    rotate([0,0,90])
-    linear_extrude(cutoutheight,center=true)
-    polygon([[-cutoutwide1/2,-2],[-cutoutwide1/2,cutoutdeep1],
-            [-cutoutwide2/2, cutoutdeep2],[-cutoutwide3/2,cutoutdeep3],
-            [-cutoutwide3/2,cutoutdeep3+2],[cutoutwide3/2,cutoutdeep3+2],
-            [cutoutwide3/2,cutoutdeep3],[cutoutwide2/2,cutoutdeep2],
-            [cutoutwide1/2,cutoutdeep1],[cutoutwide1/2,-2]]);
-    
+    difference() {
+        translate([0,0,cutoutheight/2+cutoutstartz])
+        rotate([0,0,90])
+        linear_extrude(cutoutheight,center=true)
+        polygon([[-cutoutwide1/2,-2],[-cutoutwide1/2,cutoutdeep1],
+                [-cutoutwide2/2, cutoutdeep2],[-cutoutwide3/2,cutoutdeep3],
+                [-cutoutwide3/2,cutoutdeep3+2],[cutoutwide3/2,cutoutdeep3+2],
+                [cutoutwide3/2,cutoutdeep3],[cutoutwide2/2,cutoutdeep2],
+                [cutoutwide1/2,cutoutdeep1],[cutoutwide1/2,-2]]);
+        
+        if (Supports == "Yes") {
+            translate([-(cutoutdeep3+1)/2,0,cutoutstartz+layerheight+(cutoutheight-layerheight*2)/2])
+            difference(){
+                cube([cutoutdeep3+1, 6, cutoutheight-layerheight*2],center=true);
+                cube([cutoutdeep3-1, 4, cutoutheight+layerheight*2],center=true);
+            }
+        }
+    }
+
     translate([-8.35,0,(cutoutheight+cutoutstartz)/2-1])
     cube([4.7,18,cutoutheight+cutoutstartz+2],center=true);
     
