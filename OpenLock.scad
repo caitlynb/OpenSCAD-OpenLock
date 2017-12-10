@@ -88,19 +88,6 @@ module part_d(unitwidth=25.4){
                 }
             }
         }
-        if (TileMarkers == "Yes"){
-            for (x = [-.25:0.5:.25]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3.5, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1.5:1:1.5]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth, r=0.75, $fn=8, center=true);
-            }
-        }
-        
 //        for (x = [-0.25:0.5:0.25], y = [-0.25:0.5:0.25]){
 //            translate([x*unitwidth,y*unitwidth,0])
 //            cube([unitwidth/2-3, unitwidth/2-3, 1],center=true);
@@ -132,18 +119,10 @@ module part_c(unitwidth=25.4){
             }
         }
         if (TileMarkers == "Yes"){
-            for (x = [-.25,.25]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3.5, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1.25,-.25,.75,1.25]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth, r=0.75, $fn=8, center=true);
-            }
-        }
-        
+            translate([0, 1.25*unitwidth, WallHeight])
+            rotate([0,90,0])
+            tile_marker(unitwidth/2);
+        }        
 //        for (x = [-0.25:0.5:0.25], y = [-0.25:0.5:0.25]){
 //            translate([x*unitwidth,y*unitwidth,0])
 //            cube([unitwidth/2-3, unitwidth/2-3, 1],center=true);
@@ -174,19 +153,6 @@ module part_a(unitwidth=25.4){
                 }
             }
         }
-        if (TileMarkers == "Yes"){
-            for (x = [-.25,0.25]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3.5, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1,0,1]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth, r=0.75, $fn=8, center=true);
-            }
-        }
-        
 //        for (x = [-0.25:0.5:0.25], y = [-0.25:0.5:0.25]){
 //            translate([x*unitwidth,y*unitwidth,0])
 //            cube([unitwidth/2-3, unitwidth/2-3, 1],center=true);
@@ -216,20 +182,7 @@ module part_b(unitwidth=25.4){
                     clipcut();
                 }
             }
-        }
-        if (TileMarkers == "Yes"){
-            for (x = [-.25,0.25]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3.5, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1,-0.5,0.5,1]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth, r=0.75, $fn=8, center=true);
-            }
-        }
-        
+        }        
 //        for (x = [-0.25:0.5:0.25], y = [-0.25:0.5:0.25]){
 //            translate([x*unitwidth,y*unitwidth,0])
 //            cube([unitwidth/2-3, unitwidth/2-3, 1],center=true);
@@ -260,18 +213,6 @@ module part_e(unitwidth=25.4){
                     rotate([0,0,90])
                     clipcut();
                 }
-            }
-        }
-        if (TileMarkers == "Yes"){
-            for (x = [-1:1:1]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1:1:1]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
             }
         }
         for (x = [-0.25:0.5:0.25], y = [-0.25:0.5:0.25]){
@@ -313,18 +254,6 @@ module part_f(unitwidth=25.4){
                 rotate(45)
                 translate([unitwidth*2,0,0])
                 clipcut();
-            }
-        }
-        if (TileMarkers == "Yes"){
-            for (x = [-1:1:1]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1:1:1]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
             }
         }
         for (x = [-0.25], y = [-0.25]){
@@ -384,19 +313,6 @@ module part_g(unitwidth=25.4){
         rotate([90,0,0])
         rotate(45)
         cube([1,1,unitwidth*10],center=true);
-        
-        if (TileMarkers == "Yes"){
-            for (x = [0:1:3]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*10, r=0.75, $fn=8, center=true);
-            }
-            for (y = [0:1:3]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*10, r=0.75, $fn=8, center=true);
-            }
-        }
     }
 }
 
@@ -418,18 +334,6 @@ module part_r(unitwidth=25.4){
                     }
                 }
             }            
-        }
-        if (TileMarkers == "Yes"){
-            for (x = [-2:1:2]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1:1:1]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*5, r=0.75, $fn=8, center=true);
-            }
         }
         for (x = [-1.25:0.5:1.25], y = [-0.25:0.5:0.25]){
             translate([x*unitwidth,y*unitwidth,0])
@@ -467,18 +371,6 @@ module part_s(unitwidth=25.4){
                         clipcut();
                     }
                 }
-            }
-        }
-        if (TileMarkers == "Yes"){
-            for (x = [-0.5:1:0.5]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1:1:1]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
             }
         }
 //        for (x = [-0.25:0.5:0.25], y = [-0.25:0.5:0.25]){
@@ -521,18 +413,6 @@ module part_sa(unitwidth=25.4){
                 }
             }
         }
-        if (TileMarkers == "Yes"){
-            for (x = [-0.5:1:0.5]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-1.5:1:1.5]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*5, r=0.75, $fn=8, center=true);
-            }
-        }
 //        for (x = [-0.25:0.5:0.25], y = [-0.25:0.5:0.25]){
 //            translate([x*unitwidth,y*unitwidth,0])
 //            cube([unitwidth/2-3, unitwidth/2-3, 1],center=true);
@@ -571,18 +451,6 @@ module part_sb(unitwidth=25.4){
                         
                     }
                 }
-            }
-        }
-        if (TileMarkers == "Yes"){
-            for (x = [-0.5:1:0.5]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*5, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-2:1:2]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*3, r=0.75, $fn=8, center=true);
             }
         }
 //        for (x = [-0.25:0.5:0.25], y = [-0.25:0.5:0.25]){
@@ -631,18 +499,6 @@ module part_v(unitwidth=25.4){
                 
             }
         }
-        if (TileMarkers == "Yes"){
-            for (x = [-2:1:2]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*5, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-2:1:2]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*5, r=0.75, $fn=8, center=true);
-            }
-        }
         for (x = [-1.25:0.5:1.25], y = [-1.25:0.5:1.25]){
             if( pow((x*unitwidth+unitwidth*2),2)+pow((y*unitwidth+unitwidth*2),2) < pow(unitwidth*3.4,2)){
                 translate([x*unitwidth,y*unitwidth,0])
@@ -687,18 +543,6 @@ module part_u(unitwidth=25.4){
                 
             }
         }
-        if (TileMarkers == "Yes"){
-            for (x = [-2:1:2]){
-                translate([x*unitwidth, 0, WallHeight])
-                rotate([90,0,0])
-                cylinder(h = unitwidth*5, r=0.75, $fn=8, center=true);
-            }
-            for (y = [-2:1:2]){
-                translate([0, y*unitwidth, WallHeight])
-                rotate([0,90,0])
-                cylinder(h = unitwidth*5, r=0.75, $fn=8, center=true);
-            }
-        }
         for (x = [-1.25:0.5:1.25], y = [-1.25:0.5:1.25]){
             translate([x*unitwidth,y*unitwidth,0])
             cube([unitwidth/2-3, unitwidth/2-3, 1],center=true);
@@ -716,8 +560,7 @@ module part_u(unitwidth=25.4){
             cube([1,1,unitwidth*5],center=true);
         }
             
-    }
-    
+    } 
 }
 
 module floors(){
@@ -820,6 +663,10 @@ module clipcut(){
 
 }
 
+module tile_marker(h) {
+    cylinder(h=h, r=0.75, $fn=8, center=true);
+}
+
 module basepiece(unitwidth, xmult, ymult){
     // Assumes that the textures are designed for 4" squares.
     
@@ -827,33 +674,47 @@ module basepiece(unitwidth, xmult, ymult){
     ydiff = 4-ymult;
     xrand = rands(-xdiff/2, xdiff/2, 4)[0]*unitwidth;
     yrand = rands(-ydiff/2, ydiff/2, 4)[0]*unitwidth;
-    
-    if (Texture == "Slate"){
-        intersection(){
-            translate([xrand,yrand,-0.5])
-            polyhedron_from_surface(slate_data, unitwidth*4, unitwidth*4, WallHeight-1, WallHeight+1, true);
+    difference() {
+        if (Texture == "Slate"){
+            intersection(){
+                translate([xrand,yrand,-0.5])
+                polyhedron_from_surface(slate_data, unitwidth*4, unitwidth*4, WallHeight-1, WallHeight+1, true);
+                translate([0,0,(WallHeight)/2])
+                cube([unitwidth*xmult,unitwidth*ymult,WallHeight],center=true);
+            }
+            
+        } else if (Texture == "Cobble") {
+            intersection(){
+                translate([xrand,yrand,-0.5])
+                polyhedron_from_surface(cobble_data, unitwidth*4, unitwidth*4, WallHeight-1, WallHeight+1, true);
+                translate([0,0,(WallHeight)/2])
+                cube([unitwidth*xmult,unitwidth*ymult,WallHeight],center=true);
+            }
+            
+        } else if (Texture == "Grass") {
+            intersection(){
+                translate([xrand,yrand,-1])
+                polyhedron_from_surface(grass_data, unitwidth*4, unitwidth*4, WallHeight-1, WallHeight+1, true);
+                translate([0,0,(WallHeight)/2])
+                cube([unitwidth*xmult,unitwidth*ymult,WallHeight],center=true);
+            }
+        } else {
             translate([0,0,(WallHeight)/2])
             cube([unitwidth*xmult,unitwidth*ymult,WallHeight],center=true);
         }
-        
-    } else if (Texture == "Cobble") {
-        intersection(){
-            translate([xrand,yrand,-0.5])
-            polyhedron_from_surface(cobble_data, unitwidth*4, unitwidth*4, WallHeight-1, WallHeight+1, true);
-            translate([0,0,(WallHeight)/2])
-            cube([unitwidth*xmult,unitwidth*ymult,WallHeight],center=true);
-        }
-        
-    } else if (Texture == "Grass") {
-        intersection(){
-            translate([xrand,yrand,-1])
-            polyhedron_from_surface(grass_data, unitwidth*4, unitwidth*4, WallHeight-1, WallHeight+1, true);
-            translate([0,0,(WallHeight)/2])
-            cube([unitwidth*xmult,unitwidth*ymult,WallHeight],center=true);
-        }
-    } else {
-        translate([0,0,(WallHeight)/2])
-        cube([unitwidth*xmult,unitwidth*ymult,WallHeight],center=true);
+        if (TileMarkers == "Yes") {
+            xstep = (xmult >= 1) ? 1 : xmult;
+            for (x = [-xmult/2:xstep:xmult/2]){
+                translate([x*unitwidth, 0, WallHeight])
+                rotate([90,0,0])
+                tile_marker(ymult*unitwidth);
+            }
+            ystep = (ymult >= 1) ? 1 : ymult;
+            for (y = [-ymult/2:ystep:ymult/2]){
+                translate([0, y*unitwidth, WallHeight])
+                rotate([0,90,0])
+                tile_marker(xmult*unitwidth);
+            }
+        }        
     }
-                
 }
