@@ -4,7 +4,7 @@ include <OpenLock.scad>
 //
 
 // Changes the Part that you will create
-part = "o";
+part = "oo";
 /* [a:Part A, 2x0.5 edge (1 clip)
     b:Part B, 2x0.5 edge (2 clips)
     c:Part C, 2.5x0.5 edge (2 clips)
@@ -55,8 +55,8 @@ module print_part() {
     }
 }
 
-module chamfer(unit,r=1) {
-    rotate([0,0,45]) cube([r,r,unit*5],center=true);
+module chamfer(length,r=1) {
+    rotate([0,0,45]) cube([r,r,length],center=true);
 }
 
 function edge_polygon(w=WallHeight) = [
@@ -148,7 +148,7 @@ module corner (unit, n) {
     }
 }
 
-module part_o(unit=25.4,nx=2,ny=2){
+module part_o(unit=25.4,nx=3,ny=3){
     nsx = nx-2;
     nsy = ny-2;
     union() {
@@ -166,22 +166,22 @@ module part_o(unit=25.4,nx=2,ny=2){
                 }
             }
             // Anti-stick pads
-            px = 0.25 + 0.5*(nx-2);
-            py = 0.25 + 0.5*(ny-2);
-            for (x = [-px:0.5:+px], y = [-py:0.5:py]){
+            px = 0.25 + .5*(nx-2);
+            py = 0.25 + .5*(ny-2);
+            for (x = [-px:.5:px+.5], y = [-py:.5:py]){
                 translate([x*unit,y*unit,0])
                 cube([unit/2-3, unit/2-3, 1],center=true);
             }
             // Chamfers
-            translate([-nx*unit/2, 0, 0]) rotate([90,0,0]) chamfer(unit);
-            translate([0,-ny*unit/2, 0]) rotate([0,90,0]) chamfer(unit);
-            translate([0, ny*unit/2, 0]) rotate([0,90,0]) chamfer(unit);
+            translate([-nx*unit/2, 0, 0]) rotate([90,0,0]) chamfer(ny*unit);
+            translate([0,-ny*unit/2, 0]) rotate([0,90,0]) chamfer(nx*unit);
+            translate([0, ny*unit/2, 0]) rotate([0,90,0]) chamfer(nx*unit);
         }
         edge(unit,nx,ny);
     }
 }
 
-module part_oo(unit=25.4,n=2){    
+module part_oo(unit=25.4,n=3){    
     union() {
         difference(){
             union(){
@@ -198,14 +198,14 @@ module part_oo(unit=25.4,n=2){
                 }
             }
             // Anti-stick pads
-            p=0.25 + 0.5*(n-2);
-            for (x = [-p:0.5:+p], y = [-p:0.5:p]){
+            p = 0.25 + .5*(n-2);
+            for (x = [-p:.5:+p+.5], y = [-p:.5:p+.5]){
                 translate([x*unit,y*unit,0])
                 cube([unit/2-3, unit/2-3, 1],center=true);
             }
             // Chamfers
-            translate([-n*unit/2, 0, 0]) rotate([90,0,0]) chamfer(unit);
-            translate([0,-n*unit/2, 0]) rotate([0,90,0]) chamfer(unit);
+            translate([-n*unit/2, 0, 0]) rotate([90,0,0]) chamfer(n*unit);
+            translate([0,-n*unit/2, 0]) rotate([0,90,0]) chamfer(n*unit);
         }
         corner(unit,n);
     }
